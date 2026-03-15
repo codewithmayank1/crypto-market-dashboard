@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -68,3 +69,37 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+=======
+# Crypto Market Dashboard
+
+A React.js based dashboard that displays real-time cryptocurrency market data with interactive charts and market insights.
+
+## Features
+
+- View top cryptocurrencies with real-time price updates
+- Interactive price chart for selected coins
+- Clean and responsive dashboard UI
+- Fetches live market data using public crypto APIs
+- Component-based architecture using React
+
+## Tech Stack
+
+- JavaScript
+- React.js
+- Chart.js
+- HTML5
+- CSS3
+- REST API
+
+## Project Structure
+
+src/
+components/
+CryptoTable.js
+PriceChart.js
+App.js
+
+## How to Run Locally
+
+1. Clone the repository
+>>>>>>> a74f6648b1c70c88db4db21264d3e4ee022648e3
