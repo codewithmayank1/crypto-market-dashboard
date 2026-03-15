@@ -1,25 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useEffect, useState} from "react"
+import CryptoTable from "./components/CryptoTable"
+import PriceChart from "./components/PriceChart"
+import "./App.css"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+function App(){
+
+const [coins,setCoins] = useState([])
+const [selectedCoin,setSelectedCoin] = useState("bitcoin")
+
+useEffect(()=>{
+
+fetchCoins()
+
+},[])
+
+const fetchCoins = async () => {
+
+const url =
+"https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=20&page=1"
+
+const res = await fetch(url)
+
+const data = await res.json()
+
+setCoins(data)
+
 }
 
-export default App;
+return(
+
+<div className="container">
+
+<h1>Crypto Market Dashboard</h1>
+
+<CryptoTable coins={coins} setSelectedCoin={setSelectedCoin}/>
+
+<PriceChart coin={selectedCoin}/>
+
+</div>
+
+)
+
+}
+
+export default App
